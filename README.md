@@ -14,9 +14,10 @@ Generate terrain with GANs by labeling environments in which species live
 
 ## **Dataset**
 
-Terrain created by labeling the environment in which species live.
 
 ### **ecosystem**
+
+for labeling
 
 -   **GBIF**: for lat, lon
 
