@@ -7,6 +7,11 @@ Generate terrain with GANs by labeling environments in which species live
     -   Added: Conditional proGANs
     -   Changed: Input Channel(RGB to RGBA, rgb: sat, a: dem)
 
+## **Environment**
+
+-   sdm.yaml (get_data)
+-   torch.yaml (models)
+
 ## **Dataset**
 
 Terrain created by labeling the environment in which species live.
@@ -14,6 +19,10 @@ Terrain created by labeling the environment in which species live.
 ### **ecosystem**
 
 -   **GBIF**: for lat, lon
+
+    -   Theropithecus gelada: GBIF.org (16 July 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.hdta26
+    -   Ursus arctos Linnaeus: GBIF.org (08 July 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.gw69aj
+    -   Yucca brevifolia: GBIF.org (16 July 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.gsdsnm
 
 -   **Worldclim 2.5m** (about 4.5 km): for sampling
 
@@ -28,6 +37,7 @@ Terrain created by labeling the environment in which species live.
 -   SDM(species distribution model)
 
     -   https://github.com/daniel-furman/Python-species-distribution-modeling
+    -   https://blog.daum.net/geoscience/1714
     -   https://github.com/shandongfx/workshop_maxent_R/blob/master/code/Appendix1_case_study.md
     -   http://spatialecology.weebly.com/r-code--data/49
     -   https://scikit-learn.org/stable/auto_examples/applications/plot_species_distribution_modeling.html

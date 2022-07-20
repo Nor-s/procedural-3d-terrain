@@ -1,0 +1,7 @@
+data/terrarian
+*.pdf
+tmp/
+data/
+*.png
+ee.json
+__pycache__
