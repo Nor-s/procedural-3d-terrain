@@ -5,3 +5,5 @@ data/
 *.png
 ee.json
 __pycache__
+output/*copy*/
+output/

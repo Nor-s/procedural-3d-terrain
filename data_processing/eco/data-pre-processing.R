@@ -28,7 +28,7 @@ e <- extent(-379.21145, -298.16743, 13.47514, 38.52976)
 e <- extent(-16.41397,59.77011, -29.58217,  34.74464 )
 ## ------------------------------------------------------------------------
 # pipe GBIF data
-jt_raw <- read.csv(file = sprintf("data/%s_gbif.csv", name), header = TRUE, sep = "\t") # grab GBIF
+jt_raw <- read.csv(file = sprintf("../../data/csv/%s_gbif.csv", name), header = TRUE, sep = "\t") # grab GBIF
 # e <- extent(min(jt_raw$decimalLongitude), max(jt_raw$decimalLongitude), min(jt_raw$decimalLatitude), max(jt_raw$decimalLatitude))
 jt <- data.frame(matrix(ncol = 2, nrow = length(jt_raw$decimalLongitude)))
 jt[, 1] <- jt_raw$decimalLongitude
@@ -45,7 +45,7 @@ bioclim.data <- getData(
   name = "worldclim",
   var = "bio",
   res = 2.5,
-  path = "data/"
+  path = "../../data/worldclim/"
 )
 bioclim.data <- crop(bioclim.data, e * 1.25) # crop to bg point extent
 plot(bioclim.data[[1]], main = "Bioclim 1")
@@ -55,7 +55,7 @@ points(jt, col = "black", pch = 16, cex = .3)
 dir.create(sprintf("data/%s",name), showWarnings = TRUE, recursive = FALSE, mode = "0777")
 
 for (i in c(1:19)) {
-  writeRaster(bioclim.data[[i]], paste(sprintf("data/%s/bclim",name), i, sep = ""),
+  writeRaster(bioclim.data[[i]], paste(sprintf("../../data/worldclim/%s/bclim",name), i, sep = ""),
     format = "ascii", overwrite = TRUE
   )
 }
@@ -77,7 +77,7 @@ dataMap.jt <- SpatialPointsDataFrame(train[, c(2, 3)], class.pa,
   proj4string = crs
 )
 # write as shp
-writeOGR(dataMap.jt, sprintf("data/%s/%s.shp", name, name), name, driver = "ESRI Shapefile", overwrite_layer = TRUE)
+writeOGR(dataMap.jt, sprintf("../../data/worldclim/%s/%s.shp", name, name), name, driver = "ESRI Shapefile", overwrite_layer = TRUE)
 
 # plot our points
 plot(bioclim.data[[1]], main = "Bioclim 1")

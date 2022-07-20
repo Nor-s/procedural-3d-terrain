@@ -2446,11 +2446,13 @@ class ConditionalProGAN:
                                             str(start_depth) + ".pth")
             self.gen_shadow.load_state_dict(th.load(gen_shadow_save_file))
             
-    def print(self, input, depth, alpha):
-        return (self.gen(input, depth, alpha ).detach() 
+    def print(self, input, labels, depth, alpha):
+        with th.no_grad():
+            return (self.gen(input, labels, depth, alpha ).detach() 
                     if not self.use_ema else 
                         self.gen_shadow(
                             input,
+                            labels,
                             depth,
                             alpha
                         ).detach())
