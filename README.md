@@ -1,37 +1,52 @@
 # **Procedural3DTerrain**(+ eco)
 
-Generate terrain with GANs by labeling environments in which species live
+Generate terrain with GANs by labeling SDM.
 
 -   This is a fork of [this repo](https://github.com/Panagiotou/Procedural3DTerrain).
 
     -   Added: Conditional proGANs
     -   Changed: Input Channel(RGB to RGBA, rgb: sat, a: dem)
 
-## **Environment**
+## **Environment(not updated)**
 
--   sdm.yaml (get_data)
--   torch.yaml (models)
+-   Python 3.10
+
+    -   sdm.yaml (data_processing)
+    -   torch.yaml (models)
+        -   pytorch version: conda installtorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+    -   google earth engine
+
+-   R 4.2
+    -   dismo
 
 ## **Dataset**
 
+![](./Media/data1.png)
 
-### **ecosystem**
+![](./Media/data2.png)
 
-for labeling
-
--   **GBIF**: for lat, lon
+-   **GBIF**
 
     -   Theropithecus gelada: GBIF.org (16 July 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.hdta26
     -   Ursus arctos Linnaeus: GBIF.org (08 July 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.gw69aj
     -   Yucca brevifolia: GBIF.org (16 July 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.gsdsnm
 
--   **Worldclim 2.5m** (about 4.5 km): for sampling
-
-### **procedural** **3d** **terrain**
-
+-   **Worldclim 2.5m** (about 4.5 km)
 -   **Google Earth Engine**: for DEM, sat RGB Image (256x256, $13km^2$)
 
-## **Results**
+## **Model**
+
+-   Added a label to [an existing repo](https://github.com/Panagiotou/Procedural3DTerrain). The discriminant and loss function were implemented, so I used them.
+
+![](./Media/model.png)
+
+## **Result**
+
+![](./Media/output.png)
+
+![](https://github.com/Nor-s/Pixel3D/raw/heightmap/screenshot/88903.gif)
+
+viewer: https://github.com/Nor-s/Pixel3D/tree/heightmap
 
 ## **References**
 
