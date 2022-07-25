@@ -6,6 +6,8 @@ Generate terrain with GANs by labeling SDM.
 
     -   Added: Conditional proGANs
     -   Changed: Input Channel(RGB to RGBA, rgb: sat, a: dem)
+    
+![](./Media/result.png)
 
 ## **Environment(not updated)**
 
