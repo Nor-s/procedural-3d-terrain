@@ -51,9 +51,9 @@ def print_parm(path, index, elv, points, dimensions=[128, 128], meters=13000):
     print(index)
     print(points)
 
-
-eejson = "../../ee.json"
-s_account = "nos-537@ee-nn-nn.iam.gserviceaccount.com"
+# see  https://developers.google.com/earth-engine/guides/service_account
+eejson = "../../ee.json" # '.private-key.json'
+s_account = 'my-service-account@...gserviceaccount.com'
 credentials = ee.ServiceAccountCredentials(s_account, eejson)
 ee.Initialize(credentials=credentials,
               opt_url='https://earthengine-highvolume.googleapis.com')
