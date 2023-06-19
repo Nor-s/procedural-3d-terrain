@@ -48,7 +48,7 @@ Generate terrain with GANs by labeling SDM.
 
 ![](https://github.com/Nor-s/Pixel3D/raw/heightmap/screenshot/88903.gif)
 
-viewer: https://github.com/Nor-s/Pixel3D/tree/heightmap
+app: https://github.com/Nor-s/Terrain
 
 ## **References**
 
